@@ -1,0 +1,19 @@
+{
+  "pluginId": "product-catalog-core",
+  "reports": [
+    "Item Price Report",
+    "Item Variant Matrix",
+    "Product Bundle Usage",
+    "Catalog Obsolescence Review"
+  ],
+  "exceptionQueues": [
+    "variant-generation-conflicts",
+    "uom-conversion-mismatches",
+    "catalog-policy-review"
+  ],
+  "operationalScenarios": [
+    "item-lifecycle",
+    "variant-generation",
+    "substitution-and-obsolescence"
+  ]
+}

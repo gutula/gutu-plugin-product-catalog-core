@@ -1,0 +1,25 @@
+{
+  "packageId": "product-catalog-core",
+  "packName": "product-catalog-core-base-template",
+  "expectedActions": [
+    "catalog.products.create",
+    "catalog.products.revise",
+    "catalog.products.substitute"
+  ],
+  "expectedResources": [
+    "catalog.products",
+    "catalog.variants",
+    "catalog.policies"
+  ],
+  "expectedReports": [
+    "Item Price Report",
+    "Item Variant Matrix",
+    "Product Bundle Usage",
+    "Catalog Obsolescence Review"
+  ],
+  "expectedExceptionQueues": [
+    "variant-generation-conflicts",
+    "uom-conversion-mismatches",
+    "catalog-policy-review"
+  ]
+}

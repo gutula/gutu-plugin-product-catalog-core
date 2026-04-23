@@ -1,0 +1,10 @@
+{
+  "automationId": "product-catalog-core.reconciliation.default",
+  "trigger": "exception-record-opened",
+  "action": "catalog.reconciliation.run",
+  "queues": [
+    "variant-generation-conflicts",
+    "uom-conversion-mismatches",
+    "catalog-policy-review"
+  ]
+}

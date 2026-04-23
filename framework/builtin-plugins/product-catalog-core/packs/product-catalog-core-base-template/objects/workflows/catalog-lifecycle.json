@@ -1,0 +1,9 @@
+{
+  "workflowId": "catalog-lifecycle",
+  "actors": [
+    "catalog-manager",
+    "approver",
+    "operations"
+  ],
+  "description": "Create, review, activate, revise, and retire governed catalog records."
+}

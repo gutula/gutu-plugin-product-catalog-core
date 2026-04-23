@@ -1,0 +1,9 @@
+{
+  "workspace": "business-foundations",
+  "route": "/admin/business/catalog",
+  "pageTitle": "Catalog Control Room",
+  "defaultRecordState": "draft",
+  "defaultApprovalState": "pending",
+  "defaultPostingState": "unposted",
+  "defaultFulfillmentState": "none"
+}
