@@ -7,6 +7,23 @@
     "audit-core",
     "workflow-core"
   ],
+  "recommendedPlugins": [
+    "pricing-tax-core",
+    "sales-core",
+    "procurement-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "inventory-core",
+    "manufacturing-core",
+    "quality-core"
+  ],
+  "integrationOnlyPlugins": [
+    "business-portals-core"
+  ],
+  "suggestedPacks": [
+    "localization-global-base"
+  ],
+  "standaloneSupported": true,
   "requiredCapabilities": [
     "ui.register.admin",
     "api.rest.mount",

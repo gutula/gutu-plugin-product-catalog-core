@@ -1,6 +1,29 @@
 {
   "packageId": "product-catalog-core",
   "packName": "product-catalog-core-base-template",
+  "requiredPlugins": [
+    "auth-core",
+    "org-tenant-core",
+    "role-policy-core",
+    "audit-core",
+    "workflow-core"
+  ],
+  "recommendedPlugins": [
+    "pricing-tax-core",
+    "sales-core",
+    "procurement-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "inventory-core",
+    "manufacturing-core",
+    "quality-core"
+  ],
+  "integrationOnlyPlugins": [
+    "business-portals-core"
+  ],
+  "suggestedPacks": [
+    "localization-global-base"
+  ],
   "expectedActions": [
     "catalog.products.create",
     "catalog.products.revise",

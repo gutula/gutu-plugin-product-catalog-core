@@ -54,6 +54,11 @@ Owns the shared catalog, variant, and operational default records that downstrea
 | Field | Value |
 | --- | --- |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core` |
+| Recommended Plugins | `pricing-tax-core`, `sales-core`, `procurement-core` |
+| Capability Enhancing | `inventory-core`, `manufacturing-core`, `quality-core` |
+| Integration Only | `business-portals-core` |
+| Suggested Packs | `localization-global-base` |
+| Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.catalog`, `events.publish.catalog` |
 | Provides Capabilities | `catalog.products`, `catalog.variants`, `catalog.policies` |
 | Owns Data | `catalog.products`, `catalog.variants`, `catalog.uoms`, `catalog.policies` |

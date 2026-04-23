@@ -61,11 +61,26 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 | Manifest ID | `product-catalog-core` |
 | Repo | [gutu-plugin-product-catalog-core](https://github.com/gutula/gutu-plugin-product-catalog-core) |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core` |
+| Recommended Plugins | `pricing-tax-core`, `sales-core`, `procurement-core` |
+| Capability Enhancing | `inventory-core`, `manufacturing-core`, `quality-core` |
+| Integration Only | `business-portals-core` |
+| Suggested Packs | `localization-global-base` |
+| Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.catalog`, `events.publish.catalog` |
 | Provided Capabilities | `catalog.products`, `catalog.variants`, `catalog.policies` |
 | Runtime | bun>=1.3.12 |
 | Database | postgres, sqlite |
 | Integration Model | Actions+Resources+Jobs+Workflows+UI |
+
+## Installation Guidance
+
+- Required plugins: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`
+- Recommended plugins: `pricing-tax-core`, `sales-core`, `procurement-core`
+- Capability-enhancing plugins: `inventory-core`, `manufacturing-core`, `quality-core`
+- Integration-only plugins: `business-portals-core`
+- Suggested packs: `localization-global-base`
+- Standalone supported: yes
+- Standalone-safe for catalog governance, but richer value appears once commercial or inventory plugins are enabled.
 
 ## Capability Matrix
 

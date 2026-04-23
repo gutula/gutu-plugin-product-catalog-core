@@ -48,9 +48,68 @@ export default definePackage({
       "packageId": "workflow-core",
       "class": "required",
       "rationale": "Required for Product & Catalog Core to keep its boundary governed and explicit."
+    },
+    {
+      "packageId": "pricing-tax-core",
+      "class": "optional",
+      "rationale": "Recommended with Product & Catalog Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "sales-core",
+      "class": "optional",
+      "rationale": "Recommended with Product & Catalog Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "procurement-core",
+      "class": "optional",
+      "rationale": "Recommended with Product & Catalog Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "inventory-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Product & Catalog Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "manufacturing-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Product & Catalog Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "quality-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Product & Catalog Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "business-portals-core",
+      "class": "integration-only",
+      "rationale": "Only needed when Product & Catalog Core must exchange data or actions with adjacent or external surfaces."
     }
   ],
-  "optionalWith": [],
+  "recommendedPlugins": [
+    "pricing-tax-core",
+    "sales-core",
+    "procurement-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "inventory-core",
+    "manufacturing-core",
+    "quality-core"
+  ],
+  "integrationOnlyPlugins": [
+    "business-portals-core"
+  ],
+  "suggestedPacks": [
+    "localization-global-base"
+  ],
+  "standaloneSupported": true,
+  "installNotes": [
+    "Standalone-safe for catalog governance, but richer value appears once commercial or inventory plugins are enabled."
+  ],
+  "optionalWith": [
+    "pricing-tax-core",
+    "sales-core",
+    "procurement-core"
+  ],
   "conflictsWith": [],
   "providesCapabilities": [
     "catalog.products",
