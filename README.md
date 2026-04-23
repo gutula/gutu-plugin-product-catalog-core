@@ -26,7 +26,7 @@ Canonical product, variant, UOM, and policy metadata for goods, services, assets
 
 Owns the shared catalog, variant, and operational default records that downstream selling, buying, inventory, and production plugins can reuse safely.
 
-- Exports 3 governed actions: `catalog.products.create`, `catalog.products.revise`, `catalog.products.substitute`.
+- Exports 7 governed actions: `catalog.products.create`, `catalog.products.revise`, `catalog.products.substitute`, `catalog.products.hold`, `catalog.products.release`, `catalog.products.amend`, `catalog.products.reverse`.
 - Owns 3 resource contracts: `catalog.products`, `catalog.variants`, `catalog.policies`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -71,7 +71,7 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 
 | Surface | Count | Details |
 | --- | --- | --- |
-| Actions | 3 | `catalog.products.create`, `catalog.products.revise`, `catalog.products.substitute` |
+| Actions | 7 | `catalog.products.create`, `catalog.products.revise`, `catalog.products.substitute`, `catalog.products.hold`, `catalog.products.release`, `catalog.products.amend`, `catalog.products.reverse` |
 | Resources | 3 | `catalog.products`, `catalog.variants`, `catalog.policies` |
 | Jobs | 2 | `catalog.projections.refresh`, `catalog.reconciliation.run` |
 | Workflows | 1 | `catalog-lifecycle` |
@@ -96,10 +96,10 @@ bun run docs:check
 ```
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/product-catalog-core";
+import { manifest, createCatalogProductAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/product-catalog-core";
 
 console.log(manifest.id);
-console.log(createPrimaryRecordAction.id);
+console.log(createCatalogProductAction.id);
 console.log(BusinessPrimaryResource.id);
 ```
 

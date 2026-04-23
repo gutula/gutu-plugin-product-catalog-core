@@ -71,6 +71,10 @@ Owns the shared catalog, variant, and operational default records that downstrea
 | Action | `catalog.products.create` | Permission: `catalog.products.write` | Create Catalog Product<br>Idempotent<br>Audited |
 | Action | `catalog.products.revise` | Permission: `catalog.products.write` | Revise Catalog Product<br>Non-idempotent<br>Audited |
 | Action | `catalog.products.substitute` | Permission: `catalog.products.write` | Declare Product Substitute<br>Non-idempotent<br>Audited |
+| Action | `catalog.products.hold` | Permission: `catalog.products.write` | Place Record On Hold<br>Non-idempotent<br>Audited |
+| Action | `catalog.products.release` | Permission: `catalog.products.write` | Release Record Hold<br>Non-idempotent<br>Audited |
+| Action | `catalog.products.amend` | Permission: `catalog.products.write` | Amend Record<br>Non-idempotent<br>Audited |
+| Action | `catalog.products.reverse` | Permission: `catalog.products.write` | Reverse Record<br>Non-idempotent<br>Audited |
 | Resource | `catalog.products` | Portal disabled | Canonical products with behavior flags and revision-safe metadata.<br>Purpose: Give every business plugin one governed catalog truth instead of disconnected product masters.<br>Admin auto-CRUD enabled<br>Fields: `title`, `recordState`, `approvalState`, `postingState`, `fulfillmentState`, `updatedAt` |
 | Resource | `catalog.variants` | Portal disabled | Variant combinations, identifiers, and conversion-friendly item detail.<br>Purpose: Keep purchasable and sellable product permutations traceable without forking the core catalog.<br>Admin auto-CRUD enabled<br>Fields: `label`, `status`, `requestedAction`, `updatedAt` |
 | Resource | `catalog.policies` | Portal disabled | Procurement, manufacturing, valuation, and quality defaults for catalog records.<br>Purpose: Publish reusable commercial and operational defaults to downstream domains.<br>Admin auto-CRUD enabled<br>Fields: `severity`, `status`, `reasonCode`, `updatedAt` |
@@ -156,11 +160,11 @@ stateDiagram-v2
 ### 1. Host wiring
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/product-catalog-core";
+import { manifest, createCatalogProductAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/product-catalog-core";
 
 export const pluginSurface = {
   manifest,
-  createPrimaryRecordAction,
+  createCatalogProductAction,
   BusinessPrimaryResource,
   jobDefinitions,
   workflowDefinitions,
@@ -174,10 +178,10 @@ Use this pattern when your host needs to register the plugin’s declared export
 ### 2. Action-first orchestration
 
 ```ts
-import { manifest, createPrimaryRecordAction } from "@plugins/product-catalog-core";
+import { manifest, createCatalogProductAction } from "@plugins/product-catalog-core";
 
 console.log("plugin", manifest.id);
-console.log("action", createPrimaryRecordAction.id);
+console.log("action", createCatalogProductAction.id);
 ```
 
 - Prefer action IDs as the stable integration boundary.
@@ -219,7 +223,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current truth
 
-- Exports 3 governed actions: `catalog.products.create`, `catalog.products.revise`, `catalog.products.substitute`.
+- Exports 7 governed actions: `catalog.products.create`, `catalog.products.revise`, `catalog.products.substitute`, `catalog.products.hold`, `catalog.products.release`, `catalog.products.amend`, `catalog.products.reverse`.
 - Owns 3 resource contracts: `catalog.products`, `catalog.variants`, `catalog.policies`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -233,7 +237,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current gaps
 
-- Repo-local documentation verification entrypoints were missing before this pass and need to stay green as the repo evolves.
+- No extra gaps were discovered beyond the plugin’s declared boundaries.
 
 ### Recommended next
 

@@ -6,7 +6,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "catalog.products.create",
       "catalog.products.revise",
-      "catalog.products.substitute"
+      "catalog.products.substitute",
+      "catalog.products.hold",
+      "catalog.products.release",
+      "catalog.products.amend",
+      "catalog.products.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -25,7 +29,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "catalog.products.create",
       "catalog.products.revise",
-      "catalog.products.substitute"
+      "catalog.products.substitute",
+      "catalog.products.hold",
+      "catalog.products.release",
+      "catalog.products.amend",
+      "catalog.products.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -44,7 +52,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "catalog.products.create",
       "catalog.products.revise",
-      "catalog.products.substitute"
+      "catalog.products.substitute",
+      "catalog.products.hold",
+      "catalog.products.release",
+      "catalog.products.amend",
+      "catalog.products.reverse"
     ],
     "downstreamTargets": {
       "create": [],

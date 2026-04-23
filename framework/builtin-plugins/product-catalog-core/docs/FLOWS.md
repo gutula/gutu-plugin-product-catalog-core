@@ -5,6 +5,10 @@
 - `catalog.products.create`: Create Catalog Product
 - `catalog.products.revise`: Revise Catalog Product
 - `catalog.products.substitute`: Declare Product Substitute
+- `catalog.products.hold`: Place Record On Hold
+- `catalog.products.release`: Release Record Hold
+- `catalog.products.amend`: Amend Record
+- `catalog.products.reverse`: Reverse Record
 
 ## Operational scenario matrix
 
@@ -67,6 +71,106 @@ Forbidden shortcuts:
 ### `catalog.products.substitute`
 
 Declare Product Substitute
+
+Permission: `catalog.products.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `catalog.products`, `catalog.variants`, `catalog.policies`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `catalog.products.hold`
+
+Place Record On Hold
+
+Permission: `catalog.products.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `catalog.products`, `catalog.variants`, `catalog.policies`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `catalog.products.release`
+
+Release Record Hold
+
+Permission: `catalog.products.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `catalog.products`, `catalog.variants`, `catalog.policies`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `catalog.products.amend`
+
+Amend Record
+
+Permission: `catalog.products.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `catalog.products`, `catalog.variants`, `catalog.policies`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `catalog.products.reverse`
+
+Reverse Record
 
 Permission: `catalog.products.write`
 

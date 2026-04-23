@@ -9,6 +9,10 @@
 | catalog.products.create | Create Catalog Product |
 | catalog.products.revise | Revise Catalog Product |
 | catalog.products.substitute | Declare Product Substitute |
+| catalog.products.hold | Place Record On Hold |
+| catalog.products.release | Release Record Hold |
+| catalog.products.amend | Amend Record |
+| catalog.products.reverse | Reverse Record |
 | catalog.projections.refresh | Job definition queued on `catalog-projections`. |
 | catalog.reconciliation.run | Job definition queued on `catalog-reconciliation`. |
 | catalog-lifecycle | Create, review, activate, revise, and retire governed catalog records. |

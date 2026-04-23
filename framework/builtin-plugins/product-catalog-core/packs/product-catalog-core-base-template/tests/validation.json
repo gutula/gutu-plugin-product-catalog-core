@@ -4,7 +4,11 @@
   "expectedActions": [
     "catalog.products.create",
     "catalog.products.revise",
-    "catalog.products.substitute"
+    "catalog.products.substitute",
+    "catalog.products.hold",
+    "catalog.products.release",
+    "catalog.products.amend",
+    "catalog.products.reverse"
   ],
   "expectedResources": [
     "catalog.products",
